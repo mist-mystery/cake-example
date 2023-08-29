@@ -1,0 +1,16 @@
+{
+  "dockerComposeFile": "../compose.yml",
+  "name": "rhel8-cakephp",
+  "service": "cake",
+  "remoteUser": "user",
+  "workspaceFolder": "/var/www/cake",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

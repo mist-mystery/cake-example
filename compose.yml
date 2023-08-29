@@ -1,0 +1,35 @@
+services:
+  cake:
+    build: .
+    container_name: cake-container
+    depends_on:
+      - mysql
+    environment:
+      TZ: Asia/Tokyo
+    hostname: cake-host
+    ports:
+      - 80:80
+      - 443:443
+    tty: true
+    volumes:
+      - .:/var/www/cake
+  mysql:
+    image: mysql:8.0.34
+    container_name: cake-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf:ro
+      - ./mysql/initdb:/docker-entrypoint-initdb.d:ro
+  phpmyadmin:
+    image: phpmyadmin:latest
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: cake-mysql
+      UPLOAD_LIMIT: 32M
+    ports:
+      - 8080:80

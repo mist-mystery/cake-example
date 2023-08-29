@@ -1,0 +1,25 @@
+{
+  "editor.defaultFormatter": "vscode.html-language-features",
+  "editor.tabSize": 2,
+  "files.autoGuessEncoding": true,
+  "files.eol": "\n",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "intelephense.environment.phpVersion": "8.0.27",
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+}
